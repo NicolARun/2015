@@ -1,0 +1,13 @@
+#!/bin/bash
+
+touch file_one.tmp
+rm -f file_two.tmp
+
+if [ -f file_one.tmp ] && echo "hello" && [ -f file_two.tmp ] && echo " there"
+then
+    echo "in if"
+else
+    echo "in else"
+fi
+
+exit 0

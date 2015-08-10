@@ -1,0 +1,12 @@
+#!/bin/bash
+
+rm -f file_one.tmp
+
+if [ -f file_one.tmp ] || echo "Hello" || echo "there"
+then
+    echo "in if"
+else
+    echo "in else"
+fi
+
+exit 0

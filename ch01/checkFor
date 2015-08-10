@@ -1,0 +1,18 @@
+#!/bin/sh
+
+for foo in bar fud 43
+do
+    echo $foo
+done
+
+for bar in "foo bar fud 43"
+do
+    echo $bar
+done
+
+for file in $(ls *.c)
+do
+    lpr  $file
+done
+
+exit 0
