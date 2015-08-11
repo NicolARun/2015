@@ -1,0 +1,35 @@
+#!/bin/sh
+
+trap "rm -f ./my_tmp_file_$$" INT
+echo creating file ./my_tmp_file_$$
+date > ./my_tmp_file_$$
+
+echo "press interrupt ctrl-c to interrupt ....."
+while [ -f ./my_tmp_file_$$ ]
+do
+    echo File exists
+    sleep 1
+done
+
+#echo The file no longer exists
+if [ -f ./my_tmp_file_$$ ]
+then
+    echo The file exists
+else
+    echo The file no longer exists
+fi
+
+trap - INT
+echo creating file ./my_tmp_file_$$
+date > ./my_tmp_file_$$
+
+echo "press interrupt ctrl-c to interrupt ....."
+while [ -f ./my_tmp_file_$$ ]
+do
+    echo File exists
+    sleep 1
+done
+
+echo never get here
+exit 0
+
